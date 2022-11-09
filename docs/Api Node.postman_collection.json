@@ -1,0 +1,357 @@
+{
+	"info": {
+		"_postman_id": "b88188d5-670c-42cf-9d50-86439f6ebef2",
+		"name": "Api Node",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "GET /posts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Header-test",
+								"value": "toto",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /posts",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNmJhOGRmZTMwMzlkMGVhNjI5OWU2YiIsImVtYWlsIjoiamFjcXVlc0B0b3RvLmZyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjY4MDAwMDE0LCJleHAiOjE2NzA1OTIwMTR9.CSjxwZiQcPdmLcsMvWY7vTh7wlBaKICy0uM-cMq71Yg",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "article 2",
+									"type": "default"
+								},
+								{
+									"key": "content",
+									"value": "mon articletototo",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /posts/:post_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/posts/636a6cc7f3098e27115b0c81",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts",
+								"636a6cc7f3098e27115b0c81"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /posts/:post_id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "test1ddddddfgdfg",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/posts/636a6cc7f3098e27115b0c81",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts",
+								"636a6cc7f3098e27115b0c81"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /posts/:post_id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/posts/636a6cc7f3098e27115b0c81",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts",
+								"636a6cc7f3098e27115b0c81"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "GET /posts/:post_id/comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/posts/636a7573d8603f7a125bc039/comments",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts",
+								"636a7573d8603f7a125bc039",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /posts/:post_id/comments",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "toto",
+									"type": "default"
+								},
+								{
+									"key": "message",
+									"value": "mon message",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/posts/636a7573d8603f7a125bc039/comments",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"posts",
+								"636a7573d8603f7a125bc039",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /comments/:comment_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/comments/636a7357a14e9411d80c2cfb",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comments",
+								"636a7357a14e9411d80c2cfb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /comments/:comment_id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "tatagfdg",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/comments/636a7580d8603f7a125bc03c",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comments",
+								"636a7580d8603f7a125bc03c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /comments/:comment_id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/comments/636a7580d8603f7a125bc03c",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comments",
+								"636a7580d8603f7a125bc03c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "POST /user/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "toto@toto.fr",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /user/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "toto@toto.fr",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

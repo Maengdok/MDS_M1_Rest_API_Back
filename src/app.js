@@ -1,28 +1,25 @@
-const http = require('http');
+const express = require('express');
 
 const hostname = "0.0.0.0";
 const port = 3000;
 
-const server = http.createServer((req, res) => {
+const server = express();
 
-    let url = req.url;
+const mongoose = require("mongoose");
+// mongoose.connect("mongodb://localhost:27017/apinode"); // Whithout Docker
+mongoose.connect("mongodb://mongo/apinode");
 
-    switch (url) {
-        case "/":
-            res.end("Home");
-            break;
-        case "/posts":
-            res.statusCode = 200;
-            res.setHeader = ('Content-type', "text/html");
-            res.end("Liste des articles !");
-            break;
+server.use(express.urlencoded());
+server.use(express.json());
 
-        default:
-            res.statusCode = 404;
-            res.end("Erreur")
-            break;
-    }
 
-});
+const postRoute = require("./api/routes/postRoute");
+postRoute(server);
+
+const commentRoute = require("./api/routes/commentRoute");
+commentRoute(server);
+
+const userRoute = require("./api/routes/userRoute");
+userRoute(server);
 
 server.listen(port, hostname);

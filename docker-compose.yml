@@ -4,6 +4,8 @@ services:
     container_name: project_node
     image: 'node:latest'
     working_dir: /home/node/app
+    env_file:
+      - .env
     command:
       - /bin/sh
       - '-c'
