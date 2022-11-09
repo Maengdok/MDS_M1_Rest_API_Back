@@ -81,8 +81,9 @@ exports.loginRegister = (req, res) => {
                     let userData = {
                         id: user._id,
                         email: user.email,
-                        role: "admin"
-                    }
+                        role: user.role,
+                    };
+
                     jwt.sign(userData, process.env.JWT_KEY, { expiresIn: "30 days" }, (err, token) => {
                         if(err) {
                             res.status(500);
@@ -91,9 +92,9 @@ exports.loginRegister = (req, res) => {
                         }
                         else {
                             res.status(200);
-                            res.json({token});
+                            res.json({userData, token});
                         }
-                    })
+                    });
                 }
                 else {
                     // Password don't match

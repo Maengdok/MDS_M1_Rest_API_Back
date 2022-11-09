@@ -1,7 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 
 const hostname = "0.0.0.0";
 const port = 3000;
+const corsOptions = {
+    origin: 'http://localhost:3001',
+    optionsSuccessStatus: 200
+}
 
 const server = express();
 
@@ -11,6 +16,7 @@ mongoose.connect("mongodb://mongo/apinode");
 
 server.use(express.urlencoded());
 server.use(express.json());
+server.use(cors(corsOptions));
 
 
 const postRoute = require("./api/routes/postRoute");
