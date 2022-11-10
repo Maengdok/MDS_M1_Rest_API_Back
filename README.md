@@ -41,7 +41,7 @@ $ docker exec -ti container bash
 ```
 
 ## Postman Collection
-
+[Postman Collection](https://maengdok.postman.co/workspace/BETC-Workspace~868f2fae-8182-4ab2-88c8-6ac3f5ac08a2/collection/16576874-3e931920-e1a9-4b29-a849-e9d7fdcd6a0b?action=share&creator=16576874)
 
 ## API
 
