@@ -32,7 +32,13 @@ exports.setUserRole = (req, res) => {
                     res.json({ message: "Impossible de modifier l'utilisateur." });
                 } else {
                     res.status(200);
-                    res.json(user);
+                    let userData = {
+                        '_id': user._id,
+                        'email': user.email,
+                        'role': user.role
+                    };
+
+                    res.json(userData);
                 }
             });
         }
