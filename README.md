@@ -27,7 +27,7 @@ Set .env variables
 ```
 # .env
 JWT_KEY='SAY_NO_TO_JAVASCRIPT_AS_BACK_END'
-CORS='https://localhost:3000'
+CORS='http://localhost:3000'
 ```
 
 ## Launch docker
