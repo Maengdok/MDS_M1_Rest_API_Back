@@ -11,7 +11,7 @@ services:
       - '-c'
       - 'npm install && npm start'
     ports:
-      - '3000:3000'
+      - '3001:3000'
     volumes:
       - './src:/home/node/app'
     links:
